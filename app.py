@@ -815,7 +815,8 @@ class Zoro:
 app = Flask(__name__, template_folder='templates')
 CORS(app, resources={r"/*": {"origins": [
     "http://localhost:5173",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://anira-five.vercel.app"
 ]}})
 zoro = Zoro()
 
