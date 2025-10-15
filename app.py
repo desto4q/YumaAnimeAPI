@@ -813,7 +813,10 @@ class Zoro:
             raise Exception(f"Failed to scrape page {url}: {e}")
 
 app = Flask(__name__, template_folder='templates')
-CORS(app, origins="*")
+CORS(app, resources={r"/*": {"origins": [
+    "http://localhost:5173",
+    "http://localhost:3000"
+]}})
 zoro = Zoro()
 
 def to_dict_list(data_list):
